@@ -1,6 +1,6 @@
 #Indesign.js
 
-JS utils for Indesign scripting. 
+Javascript utils for Indesign scripting. 
 Extracted from my work on the nice agenda [My 365](https://my365.fr).
 
 ##Usage
@@ -15,3 +15,4 @@ No unit test for now
 ##Todo
 
 Test all methods and add exemples
+git 
