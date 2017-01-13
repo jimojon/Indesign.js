@@ -28,7 +28,7 @@ function clearDuplicateCache()
  */
 function duplicate(sourceDoc, fromIndex, destDoc)
 {
-    $.writeln("duplicate"+sourceDoc+" "+fromIndex+" "+destDoc);
+    $.writeln("Duplicate "+sourceDoc+" from index "+fromIndex+" to "+destDoc);
     //alert ("Current setting is "+app.layoutWindows[0].transformReferencePoint);
 
     var src = null;
@@ -52,27 +52,24 @@ function duplicate(sourceDoc, fromIndex, destDoc)
 
     } catch (e) {
         $.writeln("Duplicate error: "+e);
+        return;
     }
 
     try {
         var res = srcPage.duplicate(LocationOptions.AFTER, dest.pages.item(-1));
-        var n = res.length;
-        for(var i=0; i<n; i++)
-        {
-            setMargin(res[i].marginPreferences, prevMargin[i]);
-        }
-
     }catch (e){
         $.writeln("Duplicate error:  "+e);
+        return;
     }
 
     try {
         app.select(dest.pages.item(-2));
     }catch (e){
         $.writeln("Duplicate error:  "+e);
+        return;
     }
 
-    $.writeln("duplicate complete");
+    $.writeln("Duplicate complete");
 }
 
 
